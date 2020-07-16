@@ -21,13 +21,25 @@ public class CalculateStats {
         return sumSalary / employees.length;
     }
 
-//    double minSalary() {
-//        return Math.min();
-//    }
-//
-//    double maxSalary() {
-//        return Math.max();
-//    }
+    public double minSalary() {
+        double minSalary = employees[0].getSalary();
+        for (Employee employee : employees) {
+            if(employee.getSalary() < minSalary){
+                minSalary = employee.getSalary();
+            }
+        }
+        return minSalary;
+    }
+
+    public double maxSalary() {
+        double maxSalary = 0;
+        for (Employee employee : employees) {
+            if(employee.getSalary() > maxSalary){
+                maxSalary = employee.getSalary();
+            }
+        }
+        return maxSalary;
+    }
 
     public void employeeCountPerDept() {
         for (Employee employee : employees) {
