@@ -23,15 +23,12 @@ public class Product {
         return price;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", producer='" + producer + '\'' +
+                ", price=" + price +
+                '}';
     }
 }

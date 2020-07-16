@@ -13,7 +13,7 @@ public class CalculateStats {
         this.employees = employees;
     }
 
-    double avgSalary() {
+    public double avgSalary() {
         double sumSalary = 0;
         for (Employee employee : employees) {
             sumSalary += employee.getSalary();
@@ -21,15 +21,15 @@ public class CalculateStats {
         return sumSalary / employees.length;
     }
 
-    double minSalary() {        //no idea jak to zrobic
-        return Math.min();
-    }
+//    double minSalary() {
+//        return Math.min();
+//    }
+//
+//    double maxSalary() {
+//        return Math.max();
+//    }
 
-    double maxSalary() {
-        return Math.max();
-    }
-
-    void employeeCountPerDept() {
+    public void employeeCountPerDept() {
         for (Employee employee : employees) {
             if(employee.getDepartment().equals(DEPT_MANAGE)){
                 countManage++;
