@@ -5,12 +5,24 @@ public class CalculateStats {
     private static final String DEPT_MANAGE = "Management";
     private static final String DEPT_IT = "it";
     private static final String DEPT_SUPPORT = "Support";
-    int countManage = 0;
-    int countIT = 0;
-    int countSupport = 0;
+    private int countManage = 0;
+    private int countIT = 0;
+    private int countSupport = 0;
 
     public CalculateStats(Employee[] employees) {
         this.employees = employees;
+    }
+
+    public int getCountManage() {
+        return countManage;
+    }
+
+    public int getCountIT() {
+        return countIT;
+    }
+
+    public int getCountSupport() {
+        return countSupport;
     }
 
     public double avgSalary() {

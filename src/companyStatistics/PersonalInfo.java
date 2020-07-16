@@ -3,10 +3,18 @@ package companyStatistics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class PersonalInfo {
     private Employee[] employees;
+    int i = 0;
+
+    public PersonalInfo(int length) {
+        this.employees = new Employee[length];      //czy zamiast length mozna tu przeslac i?
+    }
+
+    public Employee[] getEmployees() {
+        return employees;
+    }
 
     public void generateEmployees() {
         String fileName = "src\\companyStatistics\\employees.csv";
@@ -16,16 +24,15 @@ public class PersonalInfo {
                 var fileReader = new FileReader(fileName);
                 var bufferedReader = new BufferedReader(fileReader)
         ) {
-            int i = 0;
             String nextLine = "";
             while ((nextLine = bufferedReader.readLine()) != null) {
 
                 String[] line = nextLine.split(";");
-                employees[i] = new Employee(line[0], line[1], Integer.valueOf(line[2]), line[3], Integer.valueOf(line[4]));
+                employees[i] = new Employee(line[0], line[1], Double.valueOf(line[2]), line[3], Double.valueOf(line[4]));
+                System.out.println(employees[i].toString());
                 i++;
             }
             System.out.println("Ile pracownikow? " + i);
-            System.out.println(Arrays.toString(employees));
         } catch (IOException e) {
             System.err.println("nie mozna odczytac pliku");
         }
